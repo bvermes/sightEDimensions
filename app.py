@@ -12,6 +12,7 @@ import xml.etree.ElementTree as ET
 import matplotlib.pyplot as plt
 import model
 
+#just a basic record plotting. I was planning to make it "fancier"
 def plot_data():
     # no proper error handling in case user writes invalid column name
     x = database.get_specific_column(input("What column do you want x axis to be?"))
@@ -29,6 +30,7 @@ def plot_data():
     plt.grid(True)
     plt.show()
 
+# This is the function, where I try to retrieve data from the API
 def get_xml():
     response = requests.get(f'{api_url}/get_xml/')
 
