@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-url = "postgres://wobfoxyi:iv7VEET-4RFvR8yvsDiZHFatOShpjBv4@horton.db.elephantsql.com/wobfoxyi"
+url = "POSTGRE_URL"
 CREATE_DIMENSIONS_TABLE = """
 CREATE TABLE IF NOT EXISTS dimensions(
     id SERIAL PRIMARY KEY,
