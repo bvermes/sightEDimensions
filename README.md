@@ -1,9 +1,9 @@
 # sight-E Dimensions
-This is initially an interview assigment. In the assigment it wasn't mandatory, to create an application. 
-I just had to answer some of the questions, but I did not had the necessary skills to do so, so I decided that I create  a test script to learn.
-So in the documentation I will have a seperate chapter answering them.
+This was initially an interview assigment.  The assignment did not require creating an application initially.
+I just had to answer some of the questions, but I did not had the necessary skills to do so. Therefore, I decided to create a test script to learn.
+So in the documentation I  will include a seperate chapter answering them.
 # Skills learned
-I learned a lot about PostgreSQL, basic python scripting, making RestFul API-s, handling xmls and jsons in python. 
+I learned a lot about PostgreSQL, basic python scripting, making RESTful APIs and handling XML and JSON data in Python.
 # Overview
 The given part of the project was to write a program with the given parameters:
 * Source: XML API endpoint.
@@ -32,11 +32,11 @@ Would your solution change if web-scraped input data also needed to be utilized?
 
 
 # Note
-I had one day, to write the project, so it might have errors. 
+Given that I had only one day to complete the project, there might be errors.
 
 Prior programming I had a learning day, where I mostly watched the following useful udemy course: https://www.udemy.com/course/complete-python-postgresql-database-course/
 
-Most likely many of the 'ACID' properties does not function as it should be and I did not have time to take extra care to solve all the goals given.
+Most likely many of the 'ACID' properties does not function as it should be, and due to time constraints,I didn't take extra care to solve all the specified goals.
 
 Sources: 
 https://www.psycopg.org/docs/usage.html#with-statement
