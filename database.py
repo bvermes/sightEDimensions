@@ -35,6 +35,15 @@ def get_dimensions():
             cursor.execute(SELECT_ALL_DIMENSIONS)
             return cursor.fetchall()
 
+
+def get_specific_column(x):
+    SELECT_SPECIFIC_COLUMNS= f"SELECT {x} FROM dimensions"
+    with connection:
+        with connection.cursor() as cursor:
+            cursor.execute(SELECT_SPECIFIC_COLUMNS)
+            return cursor.fetchall()
+
+
 def loaddata(xml_text):
     # Parse the XML data
     tree = ET.ElementTree(ET.fromstring(xml_text))

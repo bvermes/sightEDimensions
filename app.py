@@ -9,6 +9,25 @@ import pause
 from datetime import datetime
 import json
 import xml.etree.ElementTree as ET
+import matplotlib.pyplot as plt
+import model
+
+def plot_data():
+    # no proper error handling in case user writes invalid column name
+    x = database.get_specific_column(input("What column do you want x axis to be?"))
+    y = database.get_specific_column(input("What column do you want y axis to be?"))
+    # sort data, while keeping the records together
+    data = list(zip(x,y))
+    sorted_data = sorted(data, key=lambda pair: pair[0])
+    sorted_x, sorted_y = zip(*sorted_data)
+    #basic plotting
+    plt.figure(figsize=(16, 6))
+    plt.plot(sorted_x,sorted_y,marker='o',linestyle='')
+    plt.xlabel(f"X-axis Label")
+    plt.ylabel(f"Y-axis Label")
+    plt.title("Line Plot")
+    plt.grid(True)
+    plt.show()
 
 def get_xml():
     response = requests.get(f'{api_url}/get_xml/')
@@ -74,13 +93,15 @@ def schedule_requests():
 
 def menu():
     database.create_table()
-
+    model.create_model(database.get_dimensions())
     while True:
         print("\n Menu:")
         print("1. Schedule requests")
         print("2. Get data from database")
         print("3. Try getting xml directly")
-        print("4. Exit")
+        print("4. Predict with model (DTC)")
+        print("5. Plot data")
+        print("6. Exit")
         choice = input("Enter your choice: ")
 
         if choice == "1":
@@ -90,7 +111,11 @@ def menu():
             print(database.get_dimensions())
         elif choice == "3":
             get_xml()
+        elif choice == "5":
+            plot_data()
         elif choice == "4":
+            model.make_prediction()
+        elif choice == "6":
             print("Exiting.")
             break
         else:
@@ -98,5 +123,6 @@ def menu():
 
 
 if __name__ == "__main__":
-    threading.Thread(target=menu).start()
+    #threading.Thread(target=menu).start()
     threading.Thread(target=schedule_requests).start()
+    menu()
