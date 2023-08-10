@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-url = "POSTGRE_URL"
+url = "postgres://wobfoxyi:iv7VEET-4RFvR8yvsDiZHFatOShpjBv4@horton.db.elephantsql.com/wobfoxyi"
 CREATE_DIMENSIONS_TABLE = """
 CREATE TABLE IF NOT EXISTS dimensions(
     id SERIAL PRIMARY KEY,
@@ -61,3 +61,4 @@ def loaddata(xml_text):
                 cursor.execute(INSERT_DIMENSION, values)
                 connection.commit()
 
+    print("Data was loaded successfully into Database")
