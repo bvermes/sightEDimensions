@@ -21,14 +21,21 @@ Goals:
 
 # Questions
 What possible solutions were considered?
+
 How did you evaluate them based on specific criteria?
+
 Regarding these criteria, how did each alternative solution perform?
+
 Why did you choose the solution you chose?
+
 Would your solution change if web-scraped input data also needed to be utilized? If yes, how?
+
 
 # Note
 I had one day, to write the project, so it might have errors. 
+
 Prior programming I had a learning day, where I mostly watched the following useful udemy course: https://www.udemy.com/course/complete-python-postgresql-database-course/
+
 Most likely many of the 'ACID' properties does not function as it should be and I did not have time to take extra care to solve all the goals given.
 
 Sources: 
